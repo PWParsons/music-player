@@ -9,7 +9,7 @@
   }
 
   function toggleRadio(): void {
-    const station: HTMLElement = document.getElementById('station')
+    const station: HTMLMediaElement = <HTMLMediaElement> document.getElementById('station')
     isPlaying ? station.pause() : station.play()
     isPlaying = !isPlaying
   }
