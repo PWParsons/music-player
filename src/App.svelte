@@ -15,6 +15,8 @@
   }
 </script>
 
+<svelte:window on:keyup={(e) => e.code === 'Space' && toggleRadio()}/>
+
 <main>
   {#await tuneIn()}
     <p>Loading...</p>
