@@ -31,6 +31,6 @@
       {#if isPlaying} Stop {:else} Play {/if}
     </button>
   {:catch error}
-    <p>Something went wrong: {error}</p>
+    <p>{error}</p>
   {/await}
 </main>
