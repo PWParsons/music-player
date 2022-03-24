@@ -14,11 +14,11 @@
     isPlaying = !isPlaying
   }
 
-  function play() {
+  function play(): void {
     isPlaying = true
   }
 
-  function stop() {
+  function pause(): void {
     isPlaying = false
   }
 </script>
@@ -42,7 +42,7 @@
     <div>
       <audio
         on:playing={play}
-        on:pause={stop}
+        on:pause={pause}
         id="station"
         preload="all"
       >
