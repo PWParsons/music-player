@@ -23,9 +23,7 @@
   }
 </script>
 
-<svelte:window
-  on:keyup={(e) => e.code === 'Space' && toggleRadio()}
-/>
+<svelte:window on:keyup={(e) => e.code === 'Space' && toggleRadio()} />
 
 <main class="flex flex-col h-screen justify-center items-center text-center space-y-6">
   {#await tuneIn()}
@@ -49,9 +47,22 @@
         <source src={value.station.listen_url}>
       </audio>
 
-      <p class="text-white">{value.now_playing.song.artist}</p>
-      <p class="text-white">{value.now_playing.song.album}</p>
-      <p class="text-white">{value.now_playing.song.title}</p>
+      <dl class="text-white">
+        <div>
+          <dt class="sr-only">Artist</dt>
+          <dd>{value.now_playing.song.artist}</dd>
+        </div>
+
+        <div>
+          <dt class="sr-only">Album</dt>
+          <dd>{value.now_playing.song.album}</dd>
+        </div>
+
+        <div>
+          <dt class="sr-only">Title</dt>
+          <dd>{value.now_playing.song.title}</dd>
+        </div>
+      </dl>
     </div>
     
     <button
